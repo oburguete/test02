@@ -8,14 +8,72 @@
 </head>
 <body>
     <h1>formularios html</h1>
-    <form>
+    <form  method="get" action="mi_servidor" novalidate="true">
+    <fieldset>
+       <legend>datos:</legend>
+       <label for="idempleado"> num. de empleado:</label>
+       <input type="text" id="idempleado"  disabled="true" value="244645" name="idempleado"/>
+       <br>
+       <input type="hidden" id="sistemas" name="sistemas" name="sistemas" value="SAP"/>
+    
         <label for="nombre">nombre</label>
-        <input type="text" id="nombre" placeholder="escribe tu nombre" name="nombre"/>
+        <input type="text" id="nombre" placeholder="escribe tu nombre" name="nombre" required="true"/>
         <br>
         <label for="apellido">apellido</label>
-        <input type="text" id="apellido" placeholder="escribe tu apellido" name="apellido"/>
+        <input type="text" id="apellido" placeholder="escribe tu apellido" name="apellido"required="true" />
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="agrega una cuenta de correo electronico" name="email" required="true"/>
+        <br>
+        <label for="edad">edad</label>
+        <input type="number" id="edad" placeholder="edad" name="edad" required="true" min="0" max="150" minlength="1" maxlength="3"/>
+        <br>
+        <label>genero</label>
+        <br>
+        <input type="radio" id="femenino" name="genero" value="femenino"/>
+        <label for="femenino">femenino</label>
+        <br>
+        <input type="radio" id="masculino" name="genero" value="masculino"/>
+        <label for="masculino">masculino</label>
+        <br>
+        <label for="password">contrasena</label>
+        <input type="password" id="password" placeholder="agrega una contrasena"
+               name="password" required="true"
+               pattern="[A-Za-z0-9]{5,10}" title="letras y numeros. tamano minimo 5. tamano maximo: 10"/>
+               <br>
+        <label>temas de interes</label> 
+        <br>      
+        <input type="checkbox" id="html" name="temas_interes" value="html"/>
+        
+        <label for="html">HTML</label>
+        <br>
+        <input type="checkbox" id="javascript" name="temas_interes" value="javascript"/>
+        <label for="javascript">javascript</label>
+        <br>
+        <input type="checkbox" id="css" name="temas_interes" value="css"/>
+        <label for="css">css</label>
+        <br>
+        <input type="checkbox" id="boostrap" name="temas_interes" value="boostrap"/>
+        <label for="boostrap">boostrap</label>
+        <br>
+        <label>nivel academico</label><br>
+        <select id="nivel_academico" name="nivel_academico" multiple="true">
+            <option value="primaria">primeria</option>
+            <option value="secundaria">secundaria</option>
+            <option value="bachilleres">bachilleres</option>
+            <option value="licenciatura" selected="true">licenciatura</option>
+            <option value="posgrado">posgrado</option>
+            <br>
+        </select>
+        <br>
+        <label for="comentario">comentario</label>
+        <br>
+        <textarea id="comentario" name="comentario" rows="2" cols="30">este es mi comentario</textarea>
         <br>
         <input type="submit" value="guardar"/>
+        <input type="submit" formnovalidate="formnovalidate" value="enviar sin validar"/>
+        <input type="reset" value="restablecer"/>
+    </fieldset>
     </form>
 </body>
 </html>
